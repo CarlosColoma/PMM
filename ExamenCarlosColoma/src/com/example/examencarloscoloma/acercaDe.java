@@ -12,7 +12,7 @@ public class acercaDe extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.acercade);
-		final TextView textView1 = (TextView)findViewById(R.id.textViewAD);
+		final TextView textView1 = (TextView)findViewById(R.id.acercade);
 		textView1.setTextSize(0x00000001, 20);
 	}
 
