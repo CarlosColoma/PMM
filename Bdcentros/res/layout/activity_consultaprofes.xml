@@ -21,12 +21,12 @@
          android:text="Insertar" />
 
      <Button
-         android:id="@+id/consultas"
+         android:id="@+id/editpers"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_alignTop="@+id/insertarProfesores"
          android:layout_toRightOf="@+id/insertarProfesores"
-         android:text="Consultas" />
+         android:text="Editar" />
      
 </RelativeLayout>
 

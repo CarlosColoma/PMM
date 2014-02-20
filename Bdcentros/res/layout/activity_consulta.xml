@@ -11,13 +11,14 @@
     <Spinner android:id="@+id/centros"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
-
-    <Button android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Consulta Centros"
+    
+    <Button
         android:id="@+id/boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:text="Consultar Centro" />
 
     <Button
         android:id="@+id/verpersonal"
@@ -39,6 +40,44 @@
         android:layout_alignRight="@+id/verpersonal"
         android:text="Profesores" />
 
-  >
+    <Button
+        android:id="@+id/editpersonal"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/verpersonal"
+        android:layout_alignBottom="@+id/verpersonal"
+        android:layout_alignRight="@+id/centros"
+        android:layout_toRightOf="@+id/verpersonal"
+        android:text="Edit Personal" />
+
+    <Button
+        android:id="@+id/editprof"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editpersonal"
+        android:layout_alignLeft="@+id/editpersonal"
+        android:layout_alignRight="@+id/editpersonal"
+        android:text="Editar Profes" />
+
+    <Button
+        android:id="@+id/editcentro"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editpersonal"
+        android:layout_alignRight="@+id/editpersonal"
+        android:layout_below="@+id/editpersonal"
+        android:text="Editar Centro" />
+
+    <Spinner
+        android:id="@+id/profesoretes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/centros"
+        android:layout_below="@+id/centros" />
+
+  
 
 </RelativeLayout>

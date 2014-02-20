@@ -10,25 +10,22 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class insertpersonal extends Activity {
+public class editarprofe extends Activity {
 
 	public static final String DATO_SUBACTIVIDAD="";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_insertarpersona);
+		setContentView(R.layout.activity_editarprofe);
 		
-		Button insertar = (Button)findViewById(R.id.insertarPersonal);
+		Button insertar = (Button)findViewById(R.id.editarprof1);
+		
 		
 			final TextView codigo = (TextView)findViewById(R.id.codigoCentro);
 		    final TextView dni = (TextView)findViewById(R.id.dni);
 		    final TextView apellidos = (TextView)findViewById(R.id.apellidos);
-		    final TextView funcion = (TextView)findViewById(R.id.funcion);
-		    final TextView salario = (TextView)findViewById(R.id.salario);
-		    
-		    	 
-			    	 
+		    final TextView especialidad = (TextView)findViewById(R.id.especialidad);
 		   	 
 		insertar.setOnClickListener(new OnClickListener() {
 		 			
@@ -40,22 +37,26 @@ public class insertpersonal extends Activity {
 		 		
 		 		String nom = dni.getText().toString();
 		 		String dir = apellidos.getText().toString();
-		 		String tel = funcion.getText().toString();
-		 		String num = salario.getText().toString();
+		 		String tel = especialidad.getText().toString();
 		 		Intent resultData = new Intent();
 		 		
 		 		
-		 		String sentencia = "INSERT INTO personal VALUES  ('"+cod+"', '"+nom+"', '"+dir+"','"+tel+"','"+num+"')";
+		 		String sentencia = "UPDATE profesores  ('"+cod+"', '"+dir+"','"+tel+"') WHERE dni=('"+nom+"')";
 		 		
 		 		
 		 		resultData.putExtra(DATO_SUBACTIVIDAD, sentencia);	
 				setResult(android.app.Activity.RESULT_OK, resultData);
-                finish();
-				
-		 				
+                finish();		
 			}
 		});
 	}
-}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.consulta, menu);
+		return true;
+	}
+	
 
+}
 

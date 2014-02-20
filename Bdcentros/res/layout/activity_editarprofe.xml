@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MostrarPersonal" >
 
-     <TextView
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,11 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_toRightOf="@+id/textView1"
         android:layout_marginTop="50px"
-		
+        android:layout_toRightOf="@+id/textView1"
         android:ems="10" />
-    
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -39,33 +38,15 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
+        android:layout_marginTop="20px"
         android:layout_toRightOf="@+id/textView4"
-        android:layout_marginTop="20px"
         android:ems="10" />
-    
-     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="20px"
-        android:text="Apellidos:" />
 
-    <EditText
-        android:id="@+id/apellidos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_marginTop="20px"
-        android:ems="10" />
-    
-     <TextView
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textView4"
         android:layout_marginTop="20px"
         android:text="Especialidad:" />
 
@@ -75,20 +56,24 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
         android:layout_marginTop="20px"
+        android:layout_toRightOf="@+id/textView3"
         android:ems="10" />
-    
-   
 
     <Button
-        android:id="@+id/editarprof"
+        android:id="@+id/editarprof1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/codigoCentro"
         android:text="Guardar" />
 
-     
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editarprof"
+        android:layout_marginBottom="17dp"
+        android:text="El DNI es la clave que se utilizara para referenciarlo" />
 
 </RelativeLayout>

@@ -6,14 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MostrarPersonal" >
-
-     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20px"
-        android:text="Codigo centro:" />
+    tools:context=".InsertarrCentro" >
 
     <EditText
         android:id="@+id/codigoCentro"
@@ -31,10 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="20px"
-        android:text="DNI:" />
+        android:text="Tipo centro:" />
 
     <EditText
-        android:id="@+id/dni"
+        android:id="@+id/tipoCentro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
@@ -49,10 +42,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
         android:layout_marginTop="20px"
-        android:text="Apellidos:" />
+        android:text="Nombre centro:" />
 
     <EditText
-        android:id="@+id/apellidos"
+        android:id="@+id/nombreCentro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
@@ -67,10 +60,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="20px"
-        android:text="Especialidad:" />
+        android:text="Direccion centro:" />
 
     <EditText
-        android:id="@+id/especialidad"
+        android:id="@+id/direccionCentro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"
@@ -79,16 +72,67 @@
         android:layout_marginTop="20px"
         android:ems="10" />
     
-   
-
-    <Button
-        android:id="@+id/editarprof"
+     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/codigoCentro"
-        android:text="Guardar" />
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="20px"
+        android:text="Telefono centro:" />
 
-     
+    <EditText
+        android:id="@+id/telefonoCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_marginTop="20px"
+        android:ems="10" />
+    
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="20px"
+        android:text="Numero plazas:" />
+
+    <EditText
+        android:id="@+id/numeroplazas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_marginTop="20px"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="22dp"
+        android:text="El Codigo del Centro sera la Referencia de Edición." />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:text="Codigo centro/Ref del centro:" />
+
+    <Button
+        android:id="@+id/cambiarcentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numeroplazas"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/codigoCentro"
+        android:text="Aceptar Cambios" />
 
 </RelativeLayout>

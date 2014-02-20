@@ -108,6 +108,21 @@ private Centros[] datos;
 				startActivity(intent);
 			}
 		});
+		
+		final Spinner spinnerprof=(Spinner)findViewById(R.id.profesoretes);
+		AdaptadorCentro adaprof =new AdaptadorCentro(this); 
+		adaprof.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinnerprof.setAdapter(adaprof);
+		
+		boton.setOnClickListener(new OnClickListener() 
+		{
+			@Override
+			public void onClick(View v) 
+			{
+				Intent intent = new Intent(Consulta.this,insertcentros.class);
+				startActivity(intent);
+			}
+		});
 	
 
 	Button verPersonal = (Button)findViewById(R.id.verpersonal);
@@ -121,7 +136,6 @@ private Centros[] datos;
 			
 		}
 	});
-	
 	Button verprofes = (Button)findViewById(R.id.verprofes);
 	verprofes.setOnClickListener(new OnClickListener() {
 		
@@ -132,6 +146,24 @@ private Centros[] datos;
 			
 		}
 	});
-	
+	 Button editcentros = (Button)findViewById(R.id.editcentro);
+	 editcentros .setOnClickListener(new OnClickListener() {
+	 
+	 	@Override
+	 	public void onClick(View v) {
+	 		Intent intent = new Intent(Consulta.this, editarcentros.class);
+	 		startActivity(intent);
+		}
+	});
+	 
+	 Button editpers = (Button)findViewById(R.id.editpersonal);
+	 editpers.setOnClickListener(new OnClickListener() {
+	 
+	 	@Override
+	 	public void onClick(View v) {
+	 		Intent intent = new Intent(Consulta.this, editpersona.class);
+	 		startActivity(intent);
+		}
+	});
 	}
 }

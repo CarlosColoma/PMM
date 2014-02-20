@@ -10,18 +10,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class insertpersonal extends Activity {
+public class editpersona extends Activity {
 
 	public static final String DATO_SUBACTIVIDAD="";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_insertarpersona);
+		setContentView(R.layout.activity_editarpersona);
 		
-		Button insertar = (Button)findViewById(R.id.insertarPersonal);
+		Button insertar = (Button)findViewById(R.id.editarpersona);
 		
-			final TextView codigo = (TextView)findViewById(R.id.codigoCentro);
+		
 		    final TextView dni = (TextView)findViewById(R.id.dni);
 		    final TextView apellidos = (TextView)findViewById(R.id.apellidos);
 		    final TextView funcion = (TextView)findViewById(R.id.funcion);
@@ -36,8 +36,6 @@ public class insertpersonal extends Activity {
 		 	public void onClick(View v) {
 		 		
 		 		
-		 		String cod = codigo.getText().toString();
-		 		
 		 		String nom = dni.getText().toString();
 		 		String dir = apellidos.getText().toString();
 		 		String tel = funcion.getText().toString();
@@ -45,8 +43,7 @@ public class insertpersonal extends Activity {
 		 		Intent resultData = new Intent();
 		 		
 		 		
-		 		String sentencia = "INSERT INTO personal VALUES  ('"+cod+"', '"+nom+"', '"+dir+"','"+tel+"','"+num+"')";
-		 		
+		 		String sentencia = "UPDATE personal VALUES  ( '"+dir+"','"+tel+"','"+num+"') WHERE dni=('"+nom+"')";
 		 		
 		 		resultData.putExtra(DATO_SUBACTIVIDAD, sentencia);	
 				setResult(android.app.Activity.RESULT_OK, resultData);
@@ -57,5 +54,3 @@ public class insertpersonal extends Activity {
 		});
 	}
 }
-
-
