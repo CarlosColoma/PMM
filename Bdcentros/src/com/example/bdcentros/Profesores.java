@@ -1,6 +1,17 @@
 package com.example.bdcentros;
 
-public class Profesores {
+import android.app.Activity;
+import android.os.Bundle;
+
+public class Profesores extends Activity  {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_consultaprofes);
+		
+	}
+	
 
 	private String codCentro;
 	private String dni;

@@ -23,6 +23,7 @@ import android.widget.TextView;
 	private TextView text;
 	private ConectBD conectar;
 	private SQLiteDatabase database;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ import android.widget.TextView;
 		text=(TextView)findViewById(R.id.textonoticia);
 		conectar=new ConectBD(this,"DBNoticias",null,1);
 		database=conectar.getWritableDatabase();
+		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 
@@ -56,26 +58,30 @@ import android.widget.TextView;
 			}
 		});
 	}		
+	
 	private String buscarNoticias() throws Exception {
 		String salida="";
 		int i=0,j=0;
 		
+		//Try catch que intenta establecer conexión con la pagina 
+		//Si no lo logra saltara la excepción en vez de un error
 		try{
 		URL enlace = new URL("http://www.elpais.com/rss/feed.html?feedId=1022");
 		HttpURLConnection conexion=(HttpURLConnection) enlace.openConnection();
 		conexion.setRequestProperty("User-Agent", "Mozilla/5.0" +
 				" (Linux; Android 1.5; es-ES) Ejemplo HTTP");
 		
-		
 		if(conexion.getResponseCode() == HttpURLConnection.HTTP_OK){
 			BufferedReader lector = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
 			String lectura=lector.readLine();
 			while(lectura!=null){
 				if(lectura.indexOf("<title>")>=0){
-					i=lectura.indexOf("<title>");
+					i=lectura.indexOf(" ");
 					j=lectura.indexOf("</title>");
 					salida+=lectura.substring(i,j);
 					System.out.println(lectura.substring(i,j));
+					
+					//Envia datos a la BD
 					database.execSQL("INSERT INTO Noticias (noticia) values ('"+lectura.substring(i,j)+"')");
 					salida+="\n**************\n";
 				}

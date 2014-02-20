@@ -49,10 +49,6 @@ private Centros[] datos;
 			return(item);
 		}
 	}  
-    
-
-	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -109,10 +105,6 @@ private Centros[] datos;
 			}
 		});
 		
-		final Spinner spinnerprof=(Spinner)findViewById(R.id.profesoretes);
-		AdaptadorCentro adaprof =new AdaptadorCentro(this); 
-		adaprof.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerprof.setAdapter(adaprof);
 		
 		boton.setOnClickListener(new OnClickListener() 
 		{
@@ -123,7 +115,7 @@ private Centros[] datos;
 				startActivity(intent);
 			}
 		});
-	
+		
 
 	Button verPersonal = (Button)findViewById(R.id.verpersonal);
 	verPersonal.setOnClickListener(new OnClickListener() {

@@ -1,5 +1,7 @@
 package com.example.noticiasviewer;
 
+
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.database.Cursor;
@@ -7,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 public class mostrar extends Activity {
 	private ConectBD conexion;
@@ -19,6 +22,7 @@ public class mostrar extends Activity {
 		conexion=new ConectBD(this,"DBNoticias",null,1);
 		db=conexion.getReadableDatabase();
 		leer();
+		
 		ListView lista=(ListView)findViewById(R.id.lista);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1, datos);
 		lista.setAdapter(adapter);
@@ -30,6 +34,7 @@ public class mostrar extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
 	public void leer(){
 		String[] campos = new String[] {"noticia"};
 

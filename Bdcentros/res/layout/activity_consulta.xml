@@ -71,13 +71,5 @@
         android:layout_below="@+id/editpersonal"
         android:text="Editar Centro" />
 
-    <Spinner
-        android:id="@+id/profesoretes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/centros"
-        android:layout_below="@+id/centros" />
-
-  
 
 </RelativeLayout>
